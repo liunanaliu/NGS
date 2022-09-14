@@ -1,0 +1,64 @@
+coverage is the number of times (on average) you read each base in your template :
++ number of samples,
++ number of reads
+
+deep coverage (high coverage values) can compensate for many sins by your sequence,
+you can sacrifice coverage depth to increase the number of sample per lane.
+
+replicate :
++ technical replicate = sequence of the same sample twice,usually not required
++ biological replicate =  sequence several individuals that represent the same biological condition.
+
+sequence is a measurement technique with high technical reproducibility (R square are typically > 0.97)
+
+sample preparation :
+adaptor ligation - size selection - QC and quantification - sequence library
+
+#single sample per lane or multiplexed :
+multiplexed libraries distribute the sample across lanes, this allows you to use sequencing more 
+efficiently an minimize technical artifacts associated with lane-specificity.
+multiplexing is achieved by using sample specific adaptors in library preparation step, then sequencing them
+all together in one lane.
+N - number of multiplex samples
+F - number of reads per lane (or unit)
+C - number of raw reads you need per sample
+Nmax = F / C
+
+
+#standard or unstandard : 
+standary libraries provide information on the strand that the original molecule came from, therefore allowing 
+you to disentangle transcriptions of overlapping genes, and more accurate sample QC.
+
+# polyA or riboDepletion :
+ribosomal RNA constitutes > 70% of the purified total RNA, riboDepletion removes specificity ribosomal RNA,
+leavinng all other RNA transcripts, however, it is not 100% efficient, 
+polyA selection is very efficient, but it will only select polyadenylated RNA, therefore many long, non-coding
+RNAs will be lost.
+
+#paired-end (PE) or single-end (SE) libraries
+PE has more information on discovery, including
+new splice variants, new structural variation, more per base coverage, typically better mapping (~5%),
+while less information on quantification,
+the 2nd fragment is redundant information for coverage purpose.
+
+library prep always involves the ligation of adapter sequence :
+# may involove some form of postive or negative selection, including
+removal of rRNA,
+capture of exons and mRNA, 
+ChIP.
+
+#may be strand, to detect RNA from two overlapping, anti-parallel genes.
+
+#may be multiplexed, using barcodes to have multiple samples in a single lane.
+
+what information do i want to get?
+# differential expression - SE
+# alternative splicing - PE
+# structral variants - PE
+
+potential bias: pooling the samples
+
+choose the right application for your question :
+# genetic variant - DNAseq, Exome.
+# quantification (expression, protein-DNA binding, regulation of expression) - RNAseq, miRNA, ChIPseq, BSseq
+
