@@ -1,0 +1,8 @@
+rna-seq analysis :
+# raw data - fastQC to check the quality,
+# filter reads - trimmomatic,
+# align reads to reference genome (splice-aware aligner) - star,
+# quantify expression - htseq-count
+# gene counts
+
+
