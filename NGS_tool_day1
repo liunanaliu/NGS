@@ -62,3 +62,14 @@ choose the right application for your question :
 # genetic variant - DNAseq, Exome.
 # quantification (expression, protein-DNA binding, regulation of expression) - RNAseq, miRNA, ChIPseq, BSseq
 
+read analysis 
+file name contains information, 
+s_3_1_0065_qseq.txt.gz
+
+s_3 for lane,
+1_ for read direction / type,
+in PE seq reads, 1 and 2 from the same tile should have the same number and order of reads
+in multiplexed seq reads, 1 and 2 from the same tile should have the same number and order of reads, read1 file has
+the reads, read 2 file has the barcode.
+
+_0065 for tile number
